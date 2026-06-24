@@ -1,0 +1,17 @@
+{
+  "short_name": "Botanical",
+  "name": "Botanical: Agri & Garden Store",
+  "icons": [
+    {
+      "src": "assets/app_icon.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "index.html",
+  "background_color": "#FBF9F4",
+  "theme_color": "#2C4C38",
+  "display": "standalone",
+  "orientation": "portrait"
+}

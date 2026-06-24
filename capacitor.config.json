@@ -1,0 +1,8 @@
+{
+  "appId": "com.botanical.store",
+  "appName": "Botanical",
+  "webDir": ".",
+  "server": {
+    "androidScheme": "https"
+  }
+}

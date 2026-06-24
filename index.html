@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botanical: Agri & Garden Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2C4C38">
+  <link rel="apple-touch-icon" href="assets/app_icon.png">
+</head>
+<body>
+
+  <div class="desktop-wrapper">
+
+    <!-- LEFT PANE: Premium Marketing Landing Page -->
+    <div class="marketing-panel">
+      <div class="marketing-header">
+        <div class="logo-icon">🌿</div>
+        <div class="logo-text">Botanical</div>
+      </div>
+
+      <div class="marketing-content">
+        <div class="marketing-badge">PREMIUM GARDENING & AGRI STORE</div>
+        <h1 class="marketing-title">Cultivating beauty, <span>nurturing growth.</span></h1>
+        <p class="marketing-subtitle">
+          Welcome to Botanical. Browse high-performance agricultural machinery, premium garden tools, spare parts, and planters in our beautiful, nature-inspired interface. Try the fully interactive app mockup on the right.
+        </p>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-dot">✓</div>
+            <div class="feature-text">
+              <h4>Frictionless Login</h4>
+              <p>Secure phone verification with instant simulated OTP entry.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-dot">✓</div>
+            <div class="feature-text">
+              <h4>Swipe-to-Remove</h4>
+              <p>Effortlessly drag items to the left in the cart to remove them instantly.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-dot">✓</div>
+            <div class="feature-text">
+              <h4>Flexible Checkout</h4>
+              <p>Choose credit cards or our convenient COD payment option (20% advance).</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-dot">✓</div>
+            <div class="feature-text">
+              <h4>Transparent Logistics</h4>
+              <p>10 to 12 days dispatch timeline clearly stated for heavy machinery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="marketing-footer">
+        <div class="marketing-instruction">
+          <span></span> Interactive Demo — Use the phone mock to test the user flow
+        </div>
+        <div class="active-step-indicator" id="desktopStepIndicator">
+          <div class="step-indicator-dot active" title="Step 1: Authenticate"></div>
+          <div class="step-indicator-dot" title="Step 2: Browse catalog"></div>
+          <div class="step-indicator-dot" title="Step 3: Cart swipe-to-remove"></div>
+          <div class="step-indicator-dot" title="Step 4: Check out & pay"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT PANE: Interactive Mobile Device Simulation -->
+    <div class="app-frame-container">
+      
+      <div class="phone-shell">
+        <!-- Physical notch -->
+        <div class="phone-notch">
+          <div class="notch-speaker"></div>
+          <div class="notch-camera"></div>
+        </div>
+
+        <!-- Phone Status Bar -->
+        <div class="phone-status-bar">
+          <span class="status-time" id="statusTime">09:41</span>
+          <div class="status-icons">
+            <span>📶</span>
+            <span>📶</span>
+            <span>🔋</span>
+          </div>
+        </div>
+
+        <!-- Mobile App Container -->
+        <div class="mobile-app">
+          
+          <div class="app-screen-viewport">
+
+            <!-- 1. LOGIN / AUTHENTICATION SCREEN -->
+            <div class="app-screen active" id="screen-login">
+              <div class="login-screen-content">
+                <div class="login-brand-area">
+                  <div class="login-logo">🌿</div>
+                  <h2 class="login-brand-title">Botanical</h2>
+                  <p class="login-brand-tagline">Premium gardening tools & spares</p>
+                </div>
+
+                <div class="login-action-area">
+                  <!-- Phone input subsection -->
+                  <div id="phone-input-section">
+                    <div class="form-group">
+                      <label class="form-label" for="login-phone">Phone Number</label>
+                      <input type="tel" id="login-phone" class="input-field" placeholder="Enter 10-digit number" maxlength="10">
+                    </div>
+                    <button class="btn-primary" id="btn-send-otp">
+                      <span>Send Verification Code</span> ➔
+                    </button>
+                  </div>
+
+                  <!-- OTP input subsection -->
+                  <div id="otp-input-section" class="otp-container">
+                    <div class="mock-otp-notification" id="mock-otp-notify">
+                      [SMS Simulator] Your OTP code is <strong>4821</strong>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Enter 4-Digit OTP</label>
+                      <div class="otp-inputs">
+                        <input type="text" class="otp-box" maxlength="1" data-index="0">
+                        <input type="text" class="otp-box" maxlength="1" data-index="1" disabled>
+                        <input type="text" class="otp-box" maxlength="1" data-index="2" disabled>
+                        <input type="text" class="otp-box" maxlength="1" data-index="3" disabled>
+                      </div>
+                    </div>
+                    <div class="otp-info">
+                      <span>Didn't get the code?</span>
+                      <span class="resend-link" id="btn-resend-otp">Resend OTP</span>
+                    </div>
+                    <button class="btn-primary" id="btn-verify-otp">
+                      Verify & Login
+                    </button>
+                  </div>
+                </div>
+
+                <div style="text-align: center; font-size: 0.75rem; color: var(--color-text-muted);">
+                  By continuing, you agree to our Terms & Privacy Policy
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. HOME SCREEN -->
+            <div class="app-screen" id="screen-home">
+              <div class="app-header">
+                <div class="app-header-title">
+                  <span class="app-header-icon">🌿</span> Botanical
+                </div>
+                <div class="app-header-profile" id="home-profile-btn" title="View Profile">
+                  👤
+                </div>
+              </div>
+              
+              <div class="screen-scrollable-content">
+                <!-- Offers Carousel -->
+                <div class="carousel-wrapper">
+                  <div class="carousel-track" id="carouselTrack">
+                    <!-- Slides loaded dynamically -->
+                  </div>
+                </div>
+                <div class="carousel-dots" id="carouselDots">
+                  <!-- Dots loaded dynamically -->
+                </div>
+
+                <!-- Categories -->
+                <div class="section-header">
+                  <h3 class="section-title">Categories</h3>
+                </div>
+                <div class="categories-grid" id="categoriesGrid">
+                  <!-- Categories loaded dynamically -->
+                </div>
+
+                <!-- Complimentary Gift Poster Card -->
+                <div id="home-gift-poster" style="background: linear-gradient(135deg, #f4e2d8 0%, #ebcebc 100%); border: 2px dashed var(--color-terracotta); border-radius: var(--radius-lg); padding: 18px; margin-bottom: 26px; box-shadow: var(--shadow-sm); position: relative; overflow: hidden; display: flex; align-items: center; gap: 16px;">
+                  <div style="font-size: 2.8rem; background-color: var(--color-white); width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1.5px solid var(--color-terracotta-light); flex-shrink: 0; box-shadow: var(--shadow-sm);" id="home-gift-icon">
+                    🌸
+                  </div>
+                  <div style="flex: 1;">
+                    <span style="display: inline-block; background: var(--color-terracotta); color: var(--color-white); padding: 2px 8px; border-radius: 12px; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px;">COMPLIMENTARY GIFT</span>
+                    <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text); margin-bottom: 3px;" id="home-gift-title">Free Organic Seed Kit</h4>
+                    <p style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.35;" id="home-gift-desc">Get a packet of premium bougainvillea & lotus seeds free with your next order above ₹1,500.</p>
+                  </div>
+                  <!-- Floating decorative leaves in background -->
+                  <div style="position: absolute; right: -8px; bottom: -8px; font-size: 3.5rem; opacity: 0.08; pointer-events: none; transform: rotate(20deg);">🍃</div>
+                </div>
+
+                <!-- Products Catalog -->
+                <div class="section-header">
+                  <h3 class="section-title" id="catalog-title">Our Products</h3>
+                </div>
+                <div class="products-grid" id="productsGrid">
+                  <!-- Products loaded dynamically -->
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. PRODUCT DETAILS SCREEN (Slides up) -->
+            <div class="app-screen" id="screen-product-detail">
+              <div class="sub-header">
+                <button class="back-btn" id="detail-back-btn">➔</button>
+                <div class="sub-header-title">Product Details</div>
+              </div>
+
+              <div class="screen-scrollable-content" style="padding-bottom: 120px;">
+                <div class="detail-image-section">
+                  <div class="detail-badge" id="detail-badge">New</div>
+                  <img id="detail-image" src="" alt="Product Image" class="detail-product-image">
+                </div>
+
+                <div class="detail-content-section">
+                  <div class="detail-header">
+                    <div class="detail-category" id="detail-category">Category</div>
+                    <h2 class="detail-title" id="detail-title">Product Title</h2>
+                    <div class="detail-rating-row">
+                      <span class="detail-stars" id="detail-stars">★★★★★</span>
+                      <span class="detail-reviews" id="detail-reviews">(12 reviews)</span>
+                    </div>
+                  </div>
+
+                  <div class="detail-price-row">
+                    <span class="detail-price-label">Price</span>
+                    <span class="detail-price" id="detail-price">₹0</span>
+                  </div>
+
+                  <h4 class="detail-section-title">Description</h4>
+                  <p class="detail-description" id="detail-desc">Product description goes here.</p>
+
+                  <h4 class="detail-section-title">Specifications</h4>
+                  <table class="detail-specs-table">
+                    <tbody id="detail-specs-body">
+                      <!-- Specs rows loaded dynamically -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="detail-sticky-bar">
+                <button class="btn-primary" id="detail-add-cart-btn">
+                  🛒 Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- 4. CART SCREEN -->
+            <div class="app-screen" id="screen-cart">
+              <div class="app-header">
+                <div class="app-header-title">
+                  Shopping Cart
+                </div>
+              </div>
+
+              <div class="screen-scrollable-content">
+                <div style="background-color: var(--color-sage-light); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 0.75rem; color: var(--color-primary); margin-bottom: 16px; display: flex; gap: 8px; align-items: center;">
+                  <span>💡</span> <strong>Swipe item left</strong> to remove it instantly.
+                </div>
+
+                <div class="cart-items-container" id="cartItemsContainer">
+                  <!-- Cart items loaded dynamically with swipe-to-remove -->
+                </div>
+
+                <!-- Empty Cart State -->
+                <div class="cart-empty-state" id="cartEmptyState" style="display: none;">
+                  <div class="cart-empty-icon">🪴</div>
+                  <h4 class="cart-empty-title">Your garden cart is empty</h4>
+                  <p class="cart-empty-text">Add some tools or planters to get growing!</p>
+                  <button class="btn-primary" id="btn-cart-empty-shop" style="display: inline-flex; width: auto; padding: 12px 24px;">
+                    Start Shopping
+                  </button>
+                </div>
+
+                <!-- Summary Panel -->
+                <div class="cart-summary" id="cartSummarySection">
+                  <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">₹0</span>
+                  </div>
+                  <div class="summary-row">
+                    <span>Delivery (Express)</span>
+                    <span id="cart-delivery">₹150</span>
+                  </div>
+                  <div class="summary-row">
+                    <span>Tax (GST 18%)</span>
+                    <span id="cart-tax">₹0</span>
+                  </div>
+                  <div class="summary-row total">
+                    <span>Total Amount</span>
+                    <span id="cart-total">₹0</span>
+                  </div>
+
+                  <div class="cart-checkout-btn-box">
+                    <button class="btn-primary" id="btn-cart-checkout">
+                      Proceed to Checkout ➔
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. CHECKOUT SCREEN -->
+            <div class="app-screen" id="screen-checkout">
+              <div class="sub-header">
+                <button class="back-btn" id="checkout-back-btn">➔</button>
+                <div class="sub-header-title">Checkout Details</div>
+              </div>
+
+              <div class="screen-scrollable-content" style="padding-bottom: 30px;">
+                <div style="margin-bottom: 24px;">
+                  <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 8px; color: var(--color-primary);">Delivery Information</h3>
+                  <p style="font-size: 0.8rem; color: var(--color-text-muted);">Please fill out the shipment destination details.</p>
+                </div>
+
+                <form id="checkout-form" onsubmit="return false;">
+                  <div class="form-group">
+                    <label class="form-label" for="checkout-name">Full Name</label>
+                    <input type="text" id="checkout-name" class="input-field" placeholder="John Doe" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="checkout-email">Email Address</label>
+                    <input type="email" id="checkout-email" class="input-field" placeholder="john@example.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="checkout-phone">Phone Number</label>
+                    <input type="tel" id="checkout-phone" class="input-field" placeholder="10-digit number" required>
+                  </div>
+                  <!-- Saved addresses selector pills -->
+                  <div id="checkout-saved-addresses-selector" style="display: none; margin-bottom: 16px;">
+                    <label class="form-label">Or Select Saved Address</label>
+                    <div id="checkout-addresses-pills" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px;">
+                      <!-- Pills added dynamically -->
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="checkout-address">Delivery Address</label>
+                    <input type="text" id="checkout-address" class="input-field" placeholder="House No, Street, Landmark" required>
+                  </div>
+
+                  <div class="payment-selector-label">Payment Method</div>
+                  <div class="payment-options-grid">
+                    <div class="payment-option-card active" id="pay-shiuli">
+                      <div class="payment-icon">💵</div>
+                      <div class="payment-title">COD Pay</div>
+                      <div class="payment-subtitle">20% non-refundable advance</div>
+                    </div>
+                    <div class="payment-option-card" id="pay-online">
+                      <div class="payment-icon">💳</div>
+                      <div class="payment-title">Rozapay Online</div>
+                      <div class="payment-subtitle">Cards, UPI & Net</div>
+                    </div>
+                  </div>
+
+                  <button class="btn-primary" id="btn-place-order" type="submit">
+                    🔒 Secure Payment
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- 6. ORDER CONFIRMATION SCREEN -->
+            <div class="app-screen" id="screen-confirmation">
+              <div class="success-screen-content">
+                <div class="success-illustration-box">
+                  <div class="success-circle-bg"></div>
+                  <div class="success-plant">🌱</div>
+                </div>
+
+                <h2 class="success-title">Order Placed!</h2>
+                <p class="success-text" id="success-message">
+                  Thank you, John. Your order has been placed successfully. A receipt was sent to john@example.com.
+                </p>
+
+                <!-- Rozapay 20% Advance Payment Panel -->
+                <div id="rozapay-advance-panel" style="display: none; width: 100%; margin-bottom: 20px; background-color: var(--color-white); border: 1.5px dashed var(--color-terracotta); border-radius: var(--radius-md); padding: 18px; box-shadow: var(--shadow-sm); text-align: left;">
+                  <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-text); margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                    <span>💳</span> Rozapay Secure Checkout
+                  </div>
+                  <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.4; margin-bottom: 12px;" id="rozapay-advance-desc">
+                    As you selected Cash on Delivery, a 20% non-refundable advance of <strong>₹0.00</strong> is required to confirm your order dispatch.
+                  </div>
+                  <button class="btn-primary" id="btn-pay-rozapay" style="background-color: var(--color-terracotta); height: 44px; padding: 0 16px; font-size: 0.85rem; justify-content: center; width: 100%;">
+                    Pay ₹0.00 Advance via Rozapay
+                  </button>
+                  <div id="rozapay-success-status" style="display: none; font-size: 0.8rem; color: #2C4C38; font-weight: 600; align-items: center; gap: 6px; margin-top: 10px;">
+                    <span>✅</span> 20% Advance Paid. Order dispatch activated!
+                  </div>
+                </div>
+
+                <div class="success-timeline-card">
+                  <div class="success-timeline-title">
+                    <span>📦</span> Transparent Delivery Timeline
+                  </div>
+                  <div class="success-timeline-desc">
+                    Heavy machinery, spray machines, and specialized garden tools are meticulously inspected and dispatched within <strong>10 to 12 days</strong>. We will send you SMS tracking updates.
+                  </div>
+                </div>
+
+                <button class="btn-primary" id="btn-success-home">
+                  Back to Shop
+                </button>
+              </div>
+            </div>
+
+            <!-- 7. PROFILE SCREEN -->
+            <div class="app-screen" id="screen-profile">
+              <div class="app-header">
+                <div class="app-header-title">
+                  My Profile
+                </div>
+              </div>
+
+              <div class="screen-scrollable-content">
+                <div class="profile-user-card">
+                  <div class="profile-avatar-large">👤</div>
+                  <h3 class="profile-name" id="profile-name-text">Gardening Enthusiast</h3>
+                  <p class="profile-phone" id="profile-phone-text">+91 98765 43210</p>
+                </div>
+
+                <div class="profile-menu">
+                  <div class="profile-menu-item">
+                    <div class="profile-menu-left">
+                      <span class="profile-menu-icon">📦</span>
+                      <span>My Orders</span>
+                    </div>
+                    <span class="profile-menu-chevron">➔</span>
+                  </div>
+                  <div class="profile-menu-item" id="btn-profile-addresses">
+                    <div class="profile-menu-left">
+                      <span class="profile-menu-icon">📍</span>
+                      <span>Saved Addresses</span>
+                    </div>
+                    <span class="profile-menu-chevron">➔</span>
+                  </div>
+                  <div class="profile-menu-item">
+                    <div class="profile-menu-left">
+                      <span class="profile-menu-icon">💳</span>
+                      <span>Payment Methods</span>
+                    </div>
+                    <span class="profile-menu-chevron">➔</span>
+                  </div>
+                  <div class="profile-menu-item" id="btn-profile-support">
+                    <div class="profile-menu-left">
+                      <span class="profile-menu-icon">💬</span>
+                      <span>Help & Support</span>
+                    </div>
+                    <span class="profile-menu-chevron">➔</span>
+                  </div>
+                </div>
+
+                <button class="btn-secondary profile-logout-btn" id="btn-logout">
+                  🚪 Logout
+                </button>
+              </div>
+            </div>
+
+            <!-- SAVED ADDRESSES SCREEN -->
+            <div class="app-screen" id="screen-saved-addresses">
+              <div class="sub-header">
+                <button class="back-btn" id="addresses-back-btn">➔</button>
+                <div class="sub-header-title">Saved Addresses</div>
+              </div>
+
+              <div class="screen-scrollable-content" style="padding-bottom: 30px;">
+                <div id="addresses-list-container" style="margin-bottom: 24px; display: flex; flex-direction: column; gap: 12px;">
+                  <!-- Addresses loaded dynamically -->
+                </div>
+
+                <div style="background-color: var(--color-white); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm);">
+                  <h4 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 14px; color: var(--color-primary);">Add New Address</h4>
+                  <form id="add-address-form" onsubmit="return false;">
+                    <div class="form-group">
+                      <label class="form-label" for="address-label">Address Tag (e.g., Home, Farm, Work)</label>
+                      <input type="text" id="address-label" class="input-field" placeholder="My Farm" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="address-value">Full Address</label>
+                      <input type="text" id="address-value" class="input-field" placeholder="12, Green Meadow Rd, Sector 4" required>
+                    </div>
+                    <button class="btn-primary" id="btn-save-new-address" type="submit" style="height: 48px; font-size: 0.9rem;">
+                      ➕ Save Address
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- SERVICE SCREEN -->
+            <div class="app-screen" id="screen-service">
+              <div class="app-header">
+                <div class="app-header-title">
+                  🔧 Servicing & Repairs
+                </div>
+              </div>
+
+              <div class="screen-scrollable-content" style="padding-bottom: 90px;">
+                <div style="margin-bottom: 20px; background-color: var(--color-sage-light); border-radius: var(--radius-sm); padding: 12px; font-size: 0.8rem; color: var(--color-primary); line-height: 1.4;">
+                  💡 Get your farm machinery, mist dusters, and sprayers serviced by expert technicians. Pickups arranged within 24 hours.
+                </div>
+
+                <form id="service-request-form" onsubmit="return false;">
+                  <!-- Select Machine -->
+                  <div class="form-group">
+                    <label class="form-label" for="service-machine">Select Machine / Tool</label>
+                    <select id="service-machine" class="input-field" style="-webkit-appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%232C4C38%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 18px top 50%; background-size: 10px auto; padding-right: 30px;">
+                      <option value="AeroMist 4-Stroke Knapsack Sprayer">AeroMist 4-Stroke Knapsack Sprayer</option>
+                      <option value="EcoCharge Battery Powered Sprayer">EcoCharge Battery Powered Sprayer</option>
+                      <option value="Other Machine (Agricultural)">Other Agricultural Machinery</option>
+                      <option value="Other Garden Tool">Garden Tool / Shears</option>
+                    </select>
+                  </div>
+
+                  <!-- Pickup Address selector pills -->
+                  <div id="service-saved-addresses-selector" style="margin-bottom: 16px;">
+                    <label class="form-label">Select Pickup Address</label>
+                    <div id="service-addresses-pills" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px;">
+                      <!-- Pills added dynamically -->
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="service-pickup-address">Pickup Address</label>
+                    <input type="text" id="service-pickup-address" class="input-field" placeholder="Address for device collection" required>
+                  </div>
+
+                  <!-- Problem Description -->
+                  <div class="form-group">
+                    <label class="form-label" for="service-problem-desc">Describe the Issue</label>
+                    <textarea id="service-problem-desc" class="input-field" placeholder="e.g. Engine smoking, nozzle leakage, low spraying force..." style="height: 80px; resize: none;" required></textarea>
+                  </div>
+
+                  <!-- Problem Video Upload -->
+                  <div class="form-group">
+                    <label class="form-label">Upload Problem Video</label>
+                    <div id="video-upload-zone" style="border: 2px dashed var(--color-sage); border-radius: var(--radius-md); padding: 20px; text-align: center; cursor: pointer; background-color: var(--color-white); transition: var(--transition-smooth);">
+                      <div id="video-upload-prompt">
+                        <span style="font-size: 1.8rem; display: block; margin-bottom: 6px;">📹</span>
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--color-primary);">Upload / Record Video</span>
+                        <span style="font-size: 0.65rem; display: block; color: var(--color-text-muted); margin-top: 4px;">Max size 50MB (MP4, MOV)</span>
+                      </div>
+                      <div id="video-upload-progress" style="display: none;">
+                        <span style="font-size: 0.75rem; font-weight: 600; color: var(--color-text);">Uploading Video...</span>
+                        <div style="width: 100%; height: 6px; background-color: var(--color-cream-dark); border-radius: 3px; margin-top: 8px; overflow: hidden;">
+                          <div id="video-progress-bar" style="width: 0%; height: 100%; background-color: var(--color-terracotta); transition: width 0.1s linear;"></div>
+                        </div>
+                      </div>
+                      <div id="video-upload-preview" style="display: none; align-items: center; justify-content: center; flex-direction: column;">
+                        <span style="font-size: 1.6rem; color: #2C4C38; display: block;">✅</span>
+                        <span style="font-size: 0.75rem; font-weight: 600; color: var(--color-primary); margin-top: 4px;" id="video-filename-label">problem_video.mp4</span>
+                        <span style="font-size: 0.65rem; color: var(--color-text-muted);" id="video-filesize-label">(12.4 MB)</span>
+                      </div>
+                    </div>
+                    <input type="file" id="service-video-file" accept="video/*" style="display: none;">
+                  </div>
+
+                  <button class="btn-primary" id="btn-submit-service" type="submit">
+                    🔧 Schedule Pickup & Service
+                  </button>
+                </form>
+
+                <!-- Service Success Page (within screen scroll) -->
+                <div id="service-success-block" style="display: none; text-align: center; padding: 40px 10px;">
+                  <div style="font-size: 3.5rem; animation: float-leaf 4s infinite;">🛠️</div>
+                  <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-primary); margin: 16px 0 10px;">Service Requested!</h3>
+                  <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 24px;" id="service-success-text">
+                    Our technician will collect your machine from your pickup address.
+                  </p>
+                  
+                  <div style="background-color: var(--color-white); border-left: 4px solid var(--color-terracotta); border-radius: var(--radius-sm); padding: 16px; box-shadow: var(--shadow-sm); text-align: left; margin-bottom: 24px;">
+                    <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-text); margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+                      <span>📅</span> Servicing Dispatch Timeline
+                    </div>
+                    <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.4;">
+                      Collection is done within 24-48 hours. Servicing, parts repair, and dispatch returns take **10 to 12 days** to deliver back to you.
+                    </div>
+                  </div>
+
+                  <button class="btn-secondary" id="btn-service-ok" style="width: 100%;">
+                    Ok, Back to Shop
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- MANAGE / ADMIN SCREEN -->
+            <div class="app-screen" id="screen-manage">
+              <div class="app-header">
+                <div class="app-header-title">
+                  📢 Merchant Center
+                </div>
+              </div>
+
+              <div class="screen-scrollable-content" style="padding-bottom: 90px;">
+                <!-- Toggle Form Section Buttons -->
+                <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+                  <button id="btn-toggle-post-offer" class="btn-primary" style="flex: 1; height: 38px; padding: 0; font-size: 0.75rem;">📢 Offer</button>
+                  <button id="btn-toggle-post-product" class="btn-secondary" style="flex: 1; height: 38px; padding: 0; font-size: 0.75rem;">🪴 New Arrival</button>
+                  <button id="btn-toggle-post-gift" class="btn-secondary" style="flex: 1; height: 38px; padding: 0; font-size: 0.75rem;">🎁 Set Gift</button>
+                </div>
+
+                <!-- FORM A: POST NEW OFFER -->
+                <form id="post-offer-form" onsubmit="return false;">
+                  <div style="margin-bottom: 16px;">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-primary); margin-bottom: 4px;">Publish Promo Offer</h3>
+                    <p style="font-size: 0.75rem; color: var(--color-text-muted);">This offer will appear in the home page sliding banner carousel.</p>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="offer-title">Offer Title</label>
+                    <input type="text" id="offer-title" class="input-field" placeholder="e.g. Winter Bloom Fest" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="offer-subtitle">Offer Subtitle / Detail</label>
+                    <input type="text" id="offer-subtitle" class="input-field" placeholder="e.g. Flat 30% off all flowering planters" required>
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div>
+                      <label class="form-label" for="offer-code">Promo Code</label>
+                      <input type="text" id="offer-code" class="input-field" placeholder="BLOOM30" required>
+                    </div>
+                    <div>
+                      <label class="form-label" for="offer-tag">Badge Tag</label>
+                      <input type="text" id="offer-tag" class="input-field" placeholder="LIMITED TIME" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Banner Accent Color Gradient</label>
+                    <div style="display: flex; gap: 12px; margin-top: 8px;" id="offer-color-selector">
+                      <label style="flex: 1; text-align: center; padding: 12px 0; border-radius: 8px; background: linear-gradient(135deg, #2c4c38 0%, #466750 100%); cursor: pointer; border: 2px solid var(--color-primary);">
+                        <input type="radio" name="offer-color" value="linear-gradient(135deg, #2c4c38 0%, #466750 100%)" checked style="display: none;">
+                        <span style="font-size: 0.75rem; color: #fff; font-weight: bold;">Green</span>
+                      </label>
+                      <label style="flex: 1; text-align: center; padding: 12px 0; border-radius: 8px; background: linear-gradient(135deg, #7c483b 0%, #b27362 100%); cursor: pointer; border: 2px solid transparent;">
+                        <input type="radio" name="offer-color" value="linear-gradient(135deg, #7c483b 0%, #b27362 100%)" style="display: none;">
+                        <span style="font-size: 0.75rem; color: #fff; font-weight: bold;">Clay</span>
+                      </label>
+                      <label style="flex: 1; text-align: center; padding: 12px 0; border-radius: 8px; background: linear-gradient(135deg, #1d2d44 0%, #3e5c76 100%); cursor: pointer; border: 2px solid transparent;">
+                        <input type="radio" name="offer-color" value="linear-gradient(135deg, #1d2d44 0%, #3e5c76 100%)" style="display: none;">
+                        <span style="font-size: 0.75rem; color: #fff; font-weight: bold;">Navy</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <button class="btn-primary" id="btn-submit-offer" type="submit" style="margin-top: 10px;">
+                    📢 Publish Banner Offer
+                  </button>
+                </form>
+
+                <!-- FORM B: POST NEW ARRIVAL PRODUCT -->
+                <form id="post-product-form" onsubmit="return false;" style="display: none;">
+                  <div style="margin-bottom: 16px;">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-primary); margin-bottom: 4px;">List New Arrival Product</h3>
+                    <p style="font-size: 0.75rem; color: var(--color-text-muted);">This product will be instantly added to the active store catalog.</p>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="prod-name">Product Name</label>
+                    <input type="text" id="prod-name" class="input-field" placeholder="e.g. Ergonomic Weed Puller" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="prod-subtitle">Short Tagline</label>
+                    <input type="text" id="prod-subtitle" class="input-field" placeholder="e.g. Remove weeds without bending" required>
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div>
+                      <label class="form-label" for="prod-price">Price (in ₹)</label>
+                      <input type="number" id="prod-price" class="input-field" placeholder="990" required>
+                    </div>
+                    <div>
+                      <label class="form-label" for="prod-category">Category</label>
+                      <select id="prod-category" class="input-field" style="-webkit-appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%232C4C38%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 18px top 50%; background-size: 10px auto; padding-right: 30px;">
+                        <option value="machinery">Spray Machines</option>
+                        <option value="tools">Garden Tools</option>
+                        <option value="spares">Spare Parts</option>
+                        <option value="pots">Tubs & Pots</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="prod-highlight">Product Highlight Badge (optional)</label>
+                    <input type="text" id="prod-highlight" class="input-field" placeholder="e.g. NEW ARRIVAL, Bestseller">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="prod-desc">Long Description</label>
+                    <textarea id="prod-desc" class="input-field" placeholder="Details about materials, warranty, usage..." style="height: 70px; resize: none;" required></textarea>
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                    <div>
+                      <label class="form-label">Spec Label (e.g. Material)</label>
+                      <input type="text" id="prod-spec-l" class="input-field" placeholder="Material">
+                    </div>
+                    <div>
+                      <label class="form-label">Spec Value (e.g. Steel)</label>
+                      <input type="text" id="prod-spec-v" class="input-field" placeholder="Hardened Steel">
+                    </div>
+                  </div>
+
+                  <button class="btn-primary" id="btn-submit-product" type="submit" style="margin-top: 10px; background-color: var(--color-terracotta);">
+                    🪴 List New Arrival Product
+                  </button>
+                </form>
+
+                <!-- FORM C: UPDATE NEXT ORDER GIFT -->
+                <form id="post-gift-form" onsubmit="return false;" style="display: none;">
+                  <div style="margin-bottom: 16px;">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-primary); margin-bottom: 4px;">Update Next Order Gift</h3>
+                    <p style="font-size: 0.75rem; color: var(--color-text-muted);">Configure the free gift details shown on the front page poster.</p>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="gift-title">Gift Item Name</label>
+                    <input type="text" id="gift-title" class="input-field" placeholder="e.g. Handmade Flower Pot" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="gift-desc">Offer Condition / Description</label>
+                    <textarea id="gift-desc" class="input-field" placeholder="e.g. Free with all machinery purchases above ₹4,000 this week." style="height: 60px; resize: none;" required></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="gift-icon">Gift Emoji Icon</label>
+                    <input type="text" id="gift-icon" class="input-field" placeholder="🎁" required>
+                  </div>
+
+                  <button class="btn-primary" id="btn-submit-gift" type="submit" style="margin-top: 10px; background-color: var(--color-primary-light);">
+                    🎁 Update Gift Poster
+                  </button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Navigation Tab Bar -->
+          <div class="bottom-nav-bar hidden" id="bottomNavBar">
+            <div class="nav-item active" data-screen="home">
+              <span class="nav-icon">🏡</span>
+              <span>Home</span>
+            </div>
+            <div class="nav-item" data-screen="cart" id="nav-item-cart">
+              <span class="nav-icon">🛒</span>
+              <span>Cart</span>
+              <span class="nav-badge" id="cartBadge" style="display: none;">0</span>
+            </div>
+            <div class="nav-item" data-screen="service" id="nav-item-service">
+              <span class="nav-icon">🔧</span>
+              <span>Service</span>
+            </div>
+            <div class="nav-item" data-screen="manage" id="nav-item-manage">
+              <span class="nav-icon">📢</span>
+              <span>Manage</span>
+            </div>
+            <div class="nav-item" data-screen="profile">
+              <span class="nav-icon">👤</span>
+              <span>Profile</span>
+            </div>
+          </div>
+
+          <!-- Phone Home Indicator Bar -->
+          <div class="phone-home-indicator"></div>
+
+          <!-- Active notification toast -->
+          <div class="toast-msg" id="appToast">
+            <span id="toastIcon">✨</span> <span id="toastText">Item added to cart</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
